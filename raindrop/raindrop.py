@@ -57,7 +57,8 @@ class raindrop():
 		
 		tmp = np.expand_dims(self.alphamap, axis = -1)		
 		tmp = np.concatenate((fisheye, tmp), axis = 2)
-		
+		print("TMP SHAPE", tmp.shape, "FISHEYE SHAPE",fisheye.shape)
+
 		self.texture = Image.fromarray(tmp.astype('uint8'), 'RGBA')
 		# most background in drop is flipped
 		self.texture = self.texture.transpose(Image.FLIP_TOP_BOTTOM)
